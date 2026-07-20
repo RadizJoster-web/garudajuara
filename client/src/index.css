@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* 1. Beri tahu Tailwind v4 agar menggunakan strategi Class (.dark) bukan Media Query OS */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 2. Definisi Variabel CSS Asli */
 :root {
   /* Colors */
   --light: #ffffff;
@@ -14,18 +18,47 @@
   --font-mono: "IBM Plex Mono", monospace;
 }
 
+/* 3. Daftarkan Token ke Tailwind Theme */
 @theme {
-  --color-light: #ffffff;
-  --color-dark: #141416;
-  --color-primary: #e10600;
-  --color-primary-dark: #b10500;
-  --color-red-tint: #fff1f0;
+  /* Gunakan nama warna yang spesifik agar tidak bentrok dengan istilah 'dark' mode */
+  --color-light: var(--light);
+  --color-dark: var(--dark);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-red-tint: var(--red-tint);
 
-  --font-display: "Plus Jakarta Sans", sans-serif;
-  --font-body: "Inter", sans-serif;
-  --font-mono: "IBM Plex Mono", monospace;
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
 }
 
+/* 4. Reset & Base Style */
 * {
   box-sizing: border-box;
+}
+
+body {
+  background-color: var(--light);
+  color: var(--dark);
+  font-family: var(--font-body);
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+/* Otomatis ubah background body saat mode dark aktif */
+.dark body {
+  background-color: var(--dark);
+  color: var(--light);
+}
+
+/* Sembunyikan scrollbar untuk Chrome, Safari, dan Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Sembunyikan scrollbar untuk IE, Edge, dan Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE dan Edge */
+  scrollbar-width: none; /* Firefox */
 }
