@@ -19,7 +19,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <FooterBrand />
           </div>
-
+    
           {/* Navigation Columns (Masing-masing 1 Kolom) */}
           <FooterColumn title="PERUSAHAAN" links={perusahaanLinks} />
           <FooterColumn title="KEBIJAKAN" links={kebijakanLinks} />

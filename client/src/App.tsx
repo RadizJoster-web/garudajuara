@@ -17,7 +17,7 @@ import ScrollToTop from "./components/utils/ScrollToTop";
 function App() {
   return (
     <>
-      <ScrollToTop /> 
+      <ScrollToTop />
       {/* Header Navigation Area */}
       <Navbar />
       <SubNavCategoryList />
