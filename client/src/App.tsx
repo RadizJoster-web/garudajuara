@@ -4,8 +4,10 @@ import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ArticleDetailPage from "./pages/ArticleDetailPage";
 import AboutPage from "./pages/AboutPage";
+import EditorialPage from "./pages/EditorialPage/";
+import CareerPage from "./pages/CareerPage";
 
-// Components
+// Components 
 import Navbar from "./components/layout/Navbar";
 import SubNavCategoryList from "./components/layout/SubNavCategoryList";
 import Footer from "./components/layout/Footer";
@@ -29,6 +31,8 @@ function App() {
           <Route path="/kategori/:slug" element={<HomePage />} />
           <Route path="/berita/:slug" element={<ArticleDetailPage />} />
           <Route path="/tentang-kami" element={<AboutPage />} />
+          <Route path="/redaksi" element={<EditorialPage />} />
+          <Route path="/karier" element={<CareerPage />} />
         </Routes>
       </main>
 
