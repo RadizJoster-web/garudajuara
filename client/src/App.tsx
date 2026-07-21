@@ -8,6 +8,8 @@ import EditorialPage from "./pages/EditorialPage/";
 import CareerPage from "./pages/CareerPage";
 import ContactPage from "./pages/ContactPage";
 import CyberMediaPolicyPage from "./pages/CyberMediaPolicyPage";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
+import TermsPage from "./pages/TermsPage";
 
 // Components
 import Navbar from "./components/layout/Navbar";
@@ -40,6 +42,8 @@ function App() {
             path="/pedoman-media-siber"
             element={<CyberMediaPolicyPage />}
           />
+          <Route path="/kebijakan-privasi" element={<PrivacyPolicyPage />} />
+          <Route path="/syarat-ketentuan" element={<TermsPage />} />
         </Routes>
       </main>
 
