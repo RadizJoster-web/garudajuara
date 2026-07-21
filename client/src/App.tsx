@@ -6,8 +6,10 @@ import ArticleDetailPage from "./pages/ArticleDetailPage";
 import AboutPage from "./pages/AboutPage";
 import EditorialPage from "./pages/EditorialPage/";
 import CareerPage from "./pages/CareerPage";
+import ContactPage from "./pages/ContactPage";
+import CyberMediaPolicyPage from "./pages/CyberMediaPolicyPage";
 
-// Components 
+// Components
 import Navbar from "./components/layout/Navbar";
 import SubNavCategoryList from "./components/layout/SubNavCategoryList";
 import Footer from "./components/layout/Footer";
@@ -33,6 +35,11 @@ function App() {
           <Route path="/tentang-kami" element={<AboutPage />} />
           <Route path="/redaksi" element={<EditorialPage />} />
           <Route path="/karier" element={<CareerPage />} />
+          <Route path="/kontak" element={<ContactPage />} />
+          <Route
+            path="/pedoman-media-siber"
+            element={<CyberMediaPolicyPage />}
+          />
         </Routes>
       </main>
 
