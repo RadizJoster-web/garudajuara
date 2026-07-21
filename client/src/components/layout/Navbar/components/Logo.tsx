@@ -1,9 +1,14 @@
+// Type definitions for 'react-router-hash-link' are not available in this project.
+// Suppress TS error until @types/react-router-hash-link is added.
+// @ts-ignore
+import { HashLink } from "react-router-hash-link";
 import { FaTrophy } from "react-icons/fa6";
 
 export default function Logo() {
   return (
-    <a
-      href="/"
+    <HashLink
+      smooth
+      to="/#beranda"
       className="flex items-center gap-3 group select-none focus:outline-none"
       aria-label="Garuda Juara - Portal Sport Indonesia"
     >
@@ -22,6 +27,6 @@ export default function Logo() {
           Portal Sport Indonesia
         </span>
       </div>
-    </a>
+    </HashLink>
   );
 }

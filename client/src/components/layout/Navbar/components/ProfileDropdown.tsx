@@ -1,5 +1,6 @@
 // src/components/layout/Navbar/components/ProfileDropdown.tsx
 import { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { FiUser, FiBookmark, FiSettings, FiLogOut } from "react-icons/fi";
 
 export default function ProfileDropdown() {
@@ -49,24 +50,24 @@ export default function ProfileDropdown() {
           </div>
 
           <div className="py-1">
-            <a
-              href="#profile"
+            <Link
+              to="#profile"
               className="flex items-center gap-2.5 px-4 py-2 text-sm text-dark dark:text-light hover:bg-red-tint dark:hover:bg-neutral-800 hover:text-primary dark:hover:text-primary transition-colors"
             >
               <FiUser className="text-base" /> Profil Saya
-            </a>
-            <a
-              href="#saved"
+            </Link>
+            <Link
+              to="#saved"
               className="flex items-center gap-2.5 px-4 py-2 text-sm text-dark dark:text-light hover:bg-red-tint dark:hover:bg-neutral-800 hover:text-primary dark:hover:text-primary transition-colors"
             >
               <FiBookmark className="text-base" /> Berita Tersimpan
-            </a>
-            <a
-              href="#settings"
+            </Link>
+            <Link
+              to="#settings"
               className="flex items-center gap-2.5 px-4 py-2 text-sm text-dark dark:text-light hover:bg-red-tint dark:hover:bg-neutral-800 hover:text-primary dark:hover:text-primary transition-colors"
             >
               <FiSettings className="text-base" /> Pengaturan
-            </a>
+            </Link>
           </div>
 
           <div className="pt-1 border-t border-gray-100 dark:border-neutral-800">

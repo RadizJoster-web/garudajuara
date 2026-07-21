@@ -26,7 +26,7 @@ export default function SearchBar() {
         <input
           type="text"
           placeholder="Cari berita olahraga..."
-          className="w-full pl-9 pr-4 py-1.5 text-sm font-body bg-gray-100 dark:bg-neutral-800 text-dark dark:text-light rounded-full border border-transparent focus:border-primary focus:bg-light dark:focus:bg-dark-bg focus:outline-none transition-all duration-200"
+          className="w-full pl-9 pr-4 py-1.5 text-sm font-body bg-gray-100 dark:bg-neutral-800 text-dark dark:text-light rounded-full border border-transparent focus:border-primary focus:bg-light dark:focus:bg-dark focus:outline-none transition-all duration-200"
         />
         <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-base" />
       </form>
