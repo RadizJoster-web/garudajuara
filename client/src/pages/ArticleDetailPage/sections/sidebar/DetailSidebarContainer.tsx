@@ -1,7 +1,7 @@
 import AdBanner from "../../../../components/ui/Ads/AdBanner";
 import RelatedArticlesWidget from "./RelatedArticlesWidget";
-import MostReadWidget from "../../../HomePage/sections/LatestNewsSection/components/sidebar/MostReadWidget";
-import SocialMediaWidget from "../../../HomePage/sections/LatestNewsSection/components/sidebar/SocialMediaWidget";
+import MostReadWidget from "../../../../components/ui/MostReadWidget";
+import SocialMediaWidget from "../../../../components/ui/SocialMediaWidget";
 import { MOST_READ_WEEKLY } from "../../../../assets/dataDummy/latestNewsSection";
 
 interface DetailSidebarContainerProps {

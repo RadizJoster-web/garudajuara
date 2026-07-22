@@ -11,11 +11,15 @@ export default function HomePage() {
   return (
     <div className="bg-light dark:bg-dark transition-colors duration-200">
       <HeroSection />
-      <AdBanner />
+      <div className="max-w-7xl mx-auto px-8">
+        <AdBanner size="fluid" />
+      </div>
       <PopularSection />
       <LatestNewsSection />
       <CategoryVisualSection />
-      <AdBanner />
+      <div className="max-w-7xl min-h-50 mx-auto px-8">
+        <AdBanner size="fluid" />
+      </div>
     </div>
   );
 }

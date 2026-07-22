@@ -3,8 +3,6 @@ export interface FooterLink {
   href: string;
 }
 
-
-
 export const perusahaanLinks: FooterLink[] = [
   { label: "Tentang Kami", href: "/tentang-kami" },
   { label: "Redaksi", href: "/redaksi" },
@@ -28,7 +26,5 @@ export const kategoriLinks: FooterLink[] = [
 
 export const lainnyaLinks: FooterLink[] = [
   { label: "Advertise dengan Kami", href: "/iklan" },
-  { label: "RSS Feed", href: "/rss" },
-  { label: "Sitemap", href: "/sitemap.xml" },
   { label: "Bantuan", href: "/bantuan" },
 ];

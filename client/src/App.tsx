@@ -3,16 +3,18 @@ import { Routes, Route } from "react-router-dom";
 // Pages
 import HomePage from "./pages/HomePage";
 import ArticleDetailPage from "./pages/ArticleDetailPage";
-import AboutPage from "./pages/AboutPage";
-import EditorialPage from "./pages/EditorialPage/";
-import CareerPage from "./pages/CareerPage";
-import ContactPage from "./pages/ContactPage";
-import CyberMediaPolicyPage from "./pages/CyberMediaPolicyPage";
-import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
-import TermsPage from "./pages/TermsPage";
-import DisclaimerPage from "./pages/DisclaimerPage";
-import AdvertisePage from "./pages/AdvertisePage";
-import HelpPage from "./pages/HelpPage";
+import CategoryPage from "./pages/CategoryPage";
+// Suports Pages (Footers page)
+import AboutPage from "./pages/suports/AboutPage";
+import EditorialPage from "./pages/suports/EditorialPage";
+import CareerPage from "./pages/suports/CareerPage";
+import ContactPage from "./pages/suports/ContactPage";
+import CyberMediaPolicyPage from "./pages/suports/CyberMediaPolicyPage";
+import PrivacyPolicyPage from "./pages/suports/PrivacyPolicyPage";
+import TermsPage from "./pages/suports/TermsPage";
+import DisclaimerPage from "./pages/suports/DisclaimerPage";
+import AdvertisePage from "./pages/suports/AdvertisePage";
+import HelpPage from "./pages/suports/HelpPage";
 
 // Components
 import Navbar from "./components/layout/Navbar";
@@ -35,8 +37,10 @@ function App() {
       <main className="min-h-screen bg-light dark:bg-dark transition-colors duration-200">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/kategori/:slug" element={<HomePage />} />
+          <Route path="/kategori/:slug" element={<CategoryPage />} />
           <Route path="/berita/:slug" element={<ArticleDetailPage />} />
+
+          {/* Suport Routes */}
           <Route path="/tentang-kami" element={<AboutPage />} />
           <Route path="/redaksi" element={<EditorialPage />} />
           <Route path="/karier" element={<CareerPage />} />

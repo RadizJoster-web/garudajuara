@@ -1,8 +1,8 @@
-import MostReadWidget from "./MostReadWidget";
+import MostReadWidget from "../../../../../../components/ui/MostReadWidget";
 import FifaRankingWidget from "./FifaRankingWidget";
 import Liga1StandingWidget from "./Liga1StandingWidget";
 import SidebarAdWidget from "../../../../../../components/ui/Ads/SidebarAdWidget";
-import SocialMediaWidget from "./SocialMediaWidget";
+import SocialMediaWidget from "../../../../../../components/ui/SocialMediaWidget";
 import {
   MOST_READ_WEEKLY,
   FIFA_RANKINGS_DATA,

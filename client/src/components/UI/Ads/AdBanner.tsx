@@ -1,80 +1,58 @@
-import { useEffect } from "react";
-
 interface AdBannerProps {
   dataAdSlot?: string;
   dataAdFormat?: "auto" | "fluid" | "rectangle" | "horizontal";
   className?: string;
-  size?: "horizontal" | "large"; // Props baru untuk kontrol ukuran
+  size?: "horizontal" | "vertical" | "medium" | "large" | "square" | "fluid";
 }
 
 export default function AdBanner({
-  dataAdSlot,
+  dataAdSlot = "1234567890",
   dataAdFormat = "auto",
   className = "",
-  size = "horizontal",
+  size = "medium",
 }: AdBannerProps) {
-  useEffect(() => {
-    try {
-      if (typeof window !== "undefined" && (window as any).adsbygoogle) {
-        ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push(
-          {},
-        );
-      }
-    } catch (err) {
-      console.error("AdSense Error:", err);
+  // Pilihan styling dimensi berdasarkan props size
+  const getSizeStyles = () => {
+    switch (size) {
+      case "horizontal":
+        return "w-full max-w-4xl min-h-[90px] sm:min-h-[120px]";
+      case "large":
+        return "w-full min-h-[300px] sm:min-h-[600px]";
+      case "medium":
+        return "w-full max-w-[336px] min-h-[280px]";
+      case "square":
+        return "w-full max-w-[250px] min-h-[250px]";
+      case "vertical":
+        return "w-full max-w-[160px] min-h-[600px]";
+      case "fluid":
+        return "w-full min-h-[150px]";
+      default:
+        return "w-full max-w-[336px] min-h-[280px]";
     }
-  }, []);
+  };
 
-  // Logika class dinamis berdasarkan size
-  const isLarge = size === "large";
-
-  const containerClasses = isLarge
-    ? "min-h-[250px] aspect-square sm:aspect-video md:aspect-[4/3] w-full"
-    : "min-h-[90px] sm:min-h-[120px] w-full";
-
-  // 1. Placeholder (Development Mode)
-  if (!dataAdSlot) {
-    return (
-      <aside
-        className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 select-none ${className}`}
-        aria-label="Iklan Sponsor"
-      >
-        <div
-          className={`bg-gray-100 dark:bg-neutral-800/60 border border-dashed border-gray-300 dark:border-neutral-700 rounded-2xl p-4 flex flex-col items-center justify-center text-center ${containerClasses}`}
-        >
-          <span className="text-[10px] font-mono uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-1">
-            — SPONSORED ADVERTISEMENT —
-          </span>
-          <p className="text-xs font-display font-semibold text-gray-500 dark:text-gray-400">
-            {isLarge
-              ? "Slot Iklan Kotak (300x250)"
-              : "Slot Iklan Banner (728x90)"}
-          </p>
-        </div>
-      </aside>
-    );
-  }
-
-  // 2. Production Mode (Google AdSense)
   return (
-    <aside
-      className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 text-center ${className}`}
-      aria-label="Iklan Sponsor"
+    <div
+      className={`relative flex flex-col items-center justify-center p-4 rounded-2xl border border-dashed border-gray-300 dark:border-neutral-800 bg-gray-50/80 dark:bg-neutral-900/50 text-center transition-colors ${getSizeStyles()} ${className}`}
     >
-      <span className="block text-[9px] font-mono text-gray-400 uppercase tracking-wider mb-1">
-        IKLAN
-      </span>
-      <div className={`overflow-hidden rounded-2xl ${containerClasses}`}>
-        <ins
-          className="adsbygoogle"
-          style={{ display: "block" }}
-          data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-          data-ad-slot={dataAdSlot}
-          data-ad-format={isLarge ? "rectangle" : dataAdFormat}
-          data-full-width-responsive="true"
-        />
+      {/* Label Penanda Slot Iklan (Placeholder Visual) */}
+      <div className="flex flex-col items-center justify-center gap-1">
+        <span className="text-[10px] font-mono font-bold tracking-widest text-gray-400 dark:text-neutral-500 uppercase">
+          — RUANG IKLAN ({size.toUpperCase()}) —
+        </span>
+        <span className="text-[10px] font-mono text-gray-400/80 dark:text-neutral-600">
+          Google AdSense / Sponsorship
+        </span>
       </div>
-    </aside>
+
+      {/* Tag Ins Resmi AdSense (Akan Aktif saat Production/Backend) */}
+      <ins
+        className="adsbygoogle block w-full h-full absolute inset-0 opacity-0 pointer-events-none"
+        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" // Nanti diisi ID AdSense kamu
+        data-ad-slot={dataAdSlot}
+        data-ad-format={dataAdFormat}
+        data-full-width-responsive="true"
+      />
+    </div>
   );
 }
-  
