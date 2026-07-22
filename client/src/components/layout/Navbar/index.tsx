@@ -8,7 +8,7 @@ import ProfileDropdown from "./components/ProfileDropdown";
 
 export default function Navbar() {
   const { isDarkMode, toggleTheme } = useTheme();
-  const [isLoggedIn] = useState<boolean>(true);
+  const [isLoggedIn] = useState<boolean>(false);
 
   return (
     // Di src/components/layout/Navbar/index.tsx

@@ -17,6 +17,10 @@ import DisclaimerPage from "./pages/suports/DisclaimerPage";
 import AdvertisePage from "./pages/suports/AdvertisePage";
 import HelpPage from "./pages/suports/HelpPage";
 
+// Auth
+import RegisterPage from "./pages/auth/RegisterPage";
+import LoginPage from "./pages/auth/LoginPage";
+
 // Components
 import Navbar from "./components/layout/Navbar";
 import SubNavCategoryList from "./components/layout/SubNavCategoryList";
@@ -56,6 +60,10 @@ function App() {
           <Route path="/disclaimer" element={<DisclaimerPage />} />
           <Route path="/iklan" element={<AdvertisePage />} />
           <Route path="/bantuan" element={<HelpPage />} />
+
+          {/* Auth */}
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </main>
 
