@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ArticleDetailPage from "./pages/ArticleDetailPage";
 import CategoryPage from "./pages/CategoryPage";
+import SearchPage from "./pages/SearchPage";
 // Suports Pages (Footers page)
 import AboutPage from "./pages/suports/AboutPage";
 import EditorialPage from "./pages/suports/EditorialPage";
@@ -39,6 +40,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/kategori/:slug" element={<CategoryPage />} />
           <Route path="/berita/:slug" element={<ArticleDetailPage />} />
+          <Route path="/pencarian" element={<SearchPage />} />
 
           {/* Suport Routes */}
           <Route path="/tentang-kami" element={<AboutPage />} />
