@@ -1,48 +1,81 @@
 export interface TermsSectionItem {
   id: string;
+  number: string;
   title: string;
+  summary: string;
   content: string[];
 }
 
 export interface TermsData {
   badge: string;
   title: string;
+  subtitle: string;
   description: string;
   lastUpdated: string;
+  effectiveDate: string;
   sections: TermsSectionItem[];
 }
 
 export const TERMS_DATA: TermsData = {
-  badge: "ATURAN PENGGUNAAN",
-  title: "Syarat & Ketentuan",
+  badge: "DOKUMEN LEGAL",
+  title: "Syarat & Ketentuan Layanan",
+  subtitle: "Aturan Pengunaan Situs, Hak Kekayaan Intelektual, dan Etika Komunitas Pembaca.",
   description:
-    "Dengan mengakses dan menggunakan platform Garuda Juara, Anda dianggap telah membaca, memahami, dan menyetujui seluruh aturan yang berlaku di bawah ini.",
-  lastUpdated: "Terakhir diperbarui: Juli 2026",
+    "Selamat datang di Garuda Juara. Dengan mengakses atau menggunakan portal media siber ini, Anda menyatakan setuju untuk terikat oleh Syarat & Ketentuan berikut.",
+  lastUpdated: "21 Juli 2026",
+  effectiveDate: "01 Januari 2026",
   sections: [
     {
-      id: "terms-1",
-      title: "1. Hak Kekayaan Intelektual",
+      id: "ketentuan-umum",
+      number: "PASAL 01",
+      title: "Ketentuan Umum Penggunaan",
+      summary: "Penerimaan persetujuan dan batasan usia penggunaan portal.",
       content: [
-        "Seluruh materi dalam platform Garuda Juara—termasuk teks artikel, tata letak, grafik, logo, dan karya fotografi—dilindungi oleh undang-undang hak cipta.",
-        "Pengutipan artikel untuk kepentingan akademis atau jurnalistik non-komersial diperbolehkan dengan syarat mencantumkan kredit 'GarudaJuara.id' beserta link aktif menuju artikel sumber.",
-        "Dilarang keras menyalin, mendistribusikan ulang, atau mereproduksi seluruh isi artikel secara otomatis (scraping) tanpa izin tertulis dari pihak Redaksi.",
+        "Akses Layanan: Seluruh konten berita, analisis, infografis, dan data pertandingan di situs Garuda Juara disediakan untuk tujuan informasi publik dan hiburan semata.",
+        "Persetujuan Pengguna: Jika Anda tidak menyetujui salah satu poin dalam ketentuan ini, Anda disarankan untuk tidak melanjutkan penggunaan layanan kami.",
+        "Kapasitas Hukum: Pengguna menyatakan memiliki kapasitas hukum yang sah menurut ketentuan perundang-undangan Republik Indonesia.",
       ],
     },
     {
-      id: "terms-2",
-      title: "2. Ketentuan Komentar & Interaksi Pengguna",
+      id: "hak-cipta",
+      number: "PASAL 02",
+      title: "Hak Kekayaan Intelektual (HAKI)",
+      summary: "Perlindungan konten teks, karya visual, dan tata cara sitasi berita.",
       content: [
-        "Pengguna bertanggung jawab penuh atas isi komentar atau opini yang diunggah dalam platform.",
-        "Dilarang mengunggah konten yang mengandung SARA, ujaran kebencian, fitnah, promosi judi/spam, atau materi yang melanggar hukum di Indonesia.",
-        "Redaksi berhak menghapus komentar atau menangguhkan akun pengguna yang melanggar ketentuan tanpa pemberitahuan terlebih dahulu.",
+        "Kepemilikan Konten: Seluruh artikel, narasi berita, desain antarmuka, tata letak, infografis, dan logo Garuda Juara merupakan hak cipta yang dilindungi Undang-Undang Hak Cipta No. 28 Tahun 2014.",
+        "Ketentuan Pengutipan: Pengutipan berita atau analisis Garuda Juara oleh media lain diperbolehkan maksimal 20% dari total panjang tulisan dengan WAJIB menyertakan atribusi sumber 'Garuda Juara' dan tautan aktif (backlink) menuju halaman artikel asli.",
+        "Larangan Scraping: Dilarang keras melakukan penggandaan otomatis (web scraping), komersialisasi ulang, atau redistribusi konten tanpa izin tertulis dari manajemen Garuda Juara.",
       ],
     },
     {
-      id: "terms-3",
-      title: "3. Perubahan Layanan & Ketentuan",
+      id: "etika-komentar",
+      number: "PASAL 03",
+      title: "Etika Komentar & Konten Pengguna",
+      summary: "Pedoman interaksi pembaca dan larangan ujaran kebencian/SARA.",
       content: [
-        "Garuda Juara berhak memperbarui atau mengubah Syarat & Ketentuan ini sewaktu-waktu sesuai perkembangan hukum dan teknis.",
-        "Penggunaan berkelanjutan atas platform ini setelah perubahan dianggap sebagai persetujuan Anda terhadap Syarat & Ketentuan yang diperbarui.",
+        "Tanggung Jawab Pembaca: Komentar atau masukan yang dituliskan pembaca pada kolom yang disediakan merupakan tanggung jawab pribadi penulis komentar tersebut.",
+        "Larangan SARA & Judol: Dilarang menuliskan komentar yang mengandung ujaran kebencian, suku, agama, ras, ujaran ad-hominem, promosi judi online, pornografi, spam, maupun hoaks.",
+        "Moderasi Redaksi: Tim redaksi berhak menghapus komentar, memblokir akun pembaca, atau mengambil langkah hukum apabila ditemukan pelanggaran etika interaksi.",
+      ],
+    },
+    {
+      id: "pembatasan-tanggung-jawab",
+      number: "PASAL 04",
+      title: "Penafian & Pembatasan Tanggung Jawab",
+      summary: "Sifat data real-time dan jaminan ketersediaan server.",
+      content: [
+        "Keakuratan Data: Meskipun tim redaksi melakukan verifikasi ketat, Garuda Juara tidak memberikan jaminan mutlak tanpa cela terhadap data statistik pertandingan dari pihak ketiga (vendor live score).",
+        "Ketersediaan Layanan: Kami berupaya menjaga ketersediaan portal 24/7, namun tidak bertanggung jawab atas gangguan teknis sementara akibat perbaikan server, bencana alam, atau force majeure.",
+      ],
+    },
+    {
+      id: "hukum-yang-berlaku",
+      number: "PASAL 05",
+      title: "Hukum yang Berlaku & Yurisdiksi",
+      summary: "Penyelesaian perselisihan berdasarkan hukum Republik Indonesia.",
+      content: [
+        "Syarat dan Ketentuan ini diatur dan ditafsirkan sesuai dengan Hukum Republik Indonesia.",
+        "Segala perselisihan yang timbul dari pengoperasian situs ini akan diselesaikan secara musyawarah mufakat, atau melalui saluran Pengadilan Negeri setempat apabila mufakat tidak tercapai.",
       ],
     },
   ],

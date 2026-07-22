@@ -10,6 +10,9 @@ import ContactPage from "./pages/ContactPage";
 import CyberMediaPolicyPage from "./pages/CyberMediaPolicyPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsPage from "./pages/TermsPage";
+import DisclaimerPage from "./pages/DisclaimerPage";
+import AdvertisePage from "./pages/AdvertisePage";
+import HelpPage from "./pages/HelpPage";
 
 // Components
 import Navbar from "./components/layout/Navbar";
@@ -29,7 +32,7 @@ function App() {
       <SubNavCategoryList />
 
       {/* Main Content Area */}
-      <main className="min-h-screen bg-light dark:bg-dark-bg transition-colors duration-200">
+      <main className="min-h-screen bg-light dark:bg-dark transition-colors duration-200">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/kategori/:slug" element={<HomePage />} />
@@ -44,6 +47,9 @@ function App() {
           />
           <Route path="/kebijakan-privasi" element={<PrivacyPolicyPage />} />
           <Route path="/syarat-ketentuan" element={<TermsPage />} />
+          <Route path="/disclaimer" element={<DisclaimerPage />} />
+          <Route path="/iklan" element={<AdvertisePage />} />
+          <Route path="/bantuan" element={<HelpPage />} />
         </Routes>
       </main>
 

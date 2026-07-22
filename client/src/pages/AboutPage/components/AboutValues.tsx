@@ -1,59 +1,82 @@
-import { FiZap, FiShield, FiAward } from "react-icons/fi";
+import {
+  FiZap,
+  FiShield,
+  FiAward,
+  FiTrendingUp,
+  FiUsers,
+  FiGlobe,
+} from "react-icons/fi";
 import type { AboutValueItem } from "../../../assets/dataContent/aboutData";
 
 interface AboutValuesProps {
   tagline: string;
   heading: string;
+  description: string;
   items: AboutValueItem[];
 }
 
 export default function AboutValues({
   tagline,
   heading,
+  description,
   items,
 }: AboutValuesProps) {
-  const getIcon = (iconName: string) => {
+  const getIcon = (iconName: AboutValueItem["iconName"]) => {
     switch (iconName) {
       case "zap":
-        return <FiZap className="text-xl text-primary" />;
+        return <FiZap className="w-6 h-6 text-primary" />;
       case "shield":
-        return <FiShield className="text-xl text-primary" />;
+        return <FiShield className="w-6 h-6 text-primary" />;
       case "award":
-        return <FiAward className="text-xl text-primary" />;
+        return <FiAward className="w-6 h-6 text-primary" />;
+      case "trending-up":
+        return <FiTrendingUp className="w-6 h-6 text-primary" />;
+      case "users":
+        return <FiUsers className="w-6 h-6 text-primary" />;
+      case "globe":
+        return <FiGlobe className="w-6 h-6 text-primary" />;
       default:
-        return <FiZap className="text-xl text-primary" />;
+        return <FiZap className="w-6 h-6 text-primary" />;
     }
   };
 
   return (
-    <div className="flex flex-col gap-6 pt-6">
-      <div className="flex flex-col gap-1 text-center">
-        <span className="text-xs font-mono font-bold tracking-widest text-primary uppercase">
-          {tagline}
-        </span>
-        <h3 className="text-xl sm:text-2xl font-display font-bold text-dark dark:text-light">
+    <section className="space-y-8">
+      <div className="text-center max-w-3xl mx-auto space-y-3">
+        <div className="font-mono text-xs font-semibold text-primary uppercase tracking-widest">
+          // {tagline}
+        </div>
+        <h2 className="font-display text-2xl sm:text-4xl font-bold text-dark dark:text-light">
           {heading}
-        </h3>
+        </h2>
+        <p className="font-body text-slate-600 dark:text-slate-400 text-sm sm:text-base">
+          {description}
+        </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {items.map((val, idx) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {items.map((item, idx) => (
           <div
             key={idx}
-            className="flex flex-col gap-3 p-6 rounded-2xl bg-light dark:bg-dark border border-gray-200/80 dark:border-neutral-800 text-start shadow-sm hover:border-primary/50 transition-colors"
+            className="p-6 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800 hover:border-primary/40 transition-all duration-300 flex flex-col justify-between"
           >
-            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center self-start">
-              {getIcon(val.iconName)}
+            <div className="space-y-4">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                {getIcon(item.iconName)}
+              </div>
+              <h3 className="font-display font-bold text-lg text-dark dark:text-light">
+                {item.title}
+              </h3>
+              <p className="font-body text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                {item.description}
+              </p>
             </div>
-            <h4 className="text-base font-display font-bold text-dark dark:text-light">
-              {val.title}
-            </h4>
-            <p className="text-xs font-body text-gray-500 dark:text-gray-400 leading-relaxed">
-              {val.description}
-            </p>
+            <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80 font-mono text-xs text-slate-400">
+              PILLAR_0{idx + 1}
+            </div>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

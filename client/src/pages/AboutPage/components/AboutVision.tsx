@@ -11,34 +11,34 @@ interface AboutVisionProps {
 
 export default function AboutVision({ data }: AboutVisionProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center pt-4">
-      <div className="flex flex-col gap-4 text-start">
-        <span className="text-xs font-mono font-bold tracking-widest text-primary uppercase">
-          {data.tagline}
-        </span>
-        <h2 className="text-2xl sm:text-3xl font-display font-black text-dark dark:text-light">
+    <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div className="lg:col-span-6 space-y-6">
+        <div className="font-mono text-xs font-semibold text-primary tracking-widest uppercase">
+          // {data.tagline}
+        </div>
+        <h2 className="font-display text-2xl sm:text-4xl font-bold text-dark dark:text-light leading-snug">
           {data.heading}
         </h2>
-        <p className="text-xs sm:text-sm font-body text-gray-500 dark:text-gray-400 leading-relaxed">
-          {data.paragraph1}
-        </p>
-        <p className="text-xs sm:text-sm font-body text-gray-500 dark:text-gray-400 leading-relaxed">
-          {data.paragraph2}
-        </p>
-      </div>
-
-      <div className="relative rounded-2xl overflow-hidden border border-gray-200 dark:border-neutral-800 shadow-lg">
-        <img
-          src={data.imageUrl}
-          alt={data.heading}
-          className="w-full h-80 object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-dark/80 via-transparent to-transparent flex items-end p-6">
-          <span className="text-xs font-mono text-light/90 italic">
-            {data.imageCaption}
-          </span>
+        <div className="space-y-4 font-body text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
+          <p>{data.paragraph1}</p>
+          <p>{data.paragraph2}</p>
         </div>
       </div>
-    </div>
+
+      <div className="lg:col-span-6">
+        <div className="relative group rounded-3xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-lg">
+          <img
+            src={data.imageUrl}
+            alt="Visi Garuda Juara"
+            className="w-full h-80 sm:h-96 object-cover transform group-hover:scale-105 transition-transform duration-700"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
+            <p className="font-display italic text-sm text-slate-200">
+              {data.imageCaption}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
